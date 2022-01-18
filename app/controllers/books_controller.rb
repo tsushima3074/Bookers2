@@ -9,6 +9,8 @@ class BooksController < ApplicationController
     @book = Book.new
     @book_edit = Book.find(params[:id])
     @user = User.find(@book_edit.user_id)
+    @book_comment = BookComment.new
+    @book_comments = BookComment.where(book_id: params[:id])
   end
 
   def edit
